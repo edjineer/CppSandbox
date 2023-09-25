@@ -1,9 +1,12 @@
 #include <iostream>
 #include <string>
+#include <cassert>
+#include <vector>
 
 bool chapter1();
 bool test1a (int a, int &b);
 bool test1b (const int &b);
+void constCastEx();
 
 bool chapter2();
 
@@ -13,6 +16,7 @@ int main()
     std::cout << "Hello World, this is a Tour of C++\n";
     
     //chapter1();
+    // constCastEx();
     chapter2();
 
     return 0;  
@@ -21,7 +25,7 @@ int main()
 
 bool chapter1()
 {
-    std::cout << "Basics\n";
+    std::cout << "Ch1: Basics\n";
     // 1.4 Test out breaking initialization 
     int x = 4.5;
     int y (4.5); 
@@ -63,7 +67,6 @@ bool chapter1()
 
     return true;
 }
-
 bool test1a (int a, int &b)
 {
     a = b;
@@ -76,9 +79,40 @@ bool test1b (const int &b)
     return true;
 }
 
+//Rainer Grimm Talk https://www.youtube.com/watch?v=tA6LbPyYdco
+void constCastEx()
+{
+   std::cout << "Rainer Grimm: Const Convo\n";
+   //ConstCast
+   int myVar = 0; 
+   int * mvptr = &myVar;
+   const int * myV2 = const_cast<int*>(mvptr);
+   assert(*myV2 == myVar);
+
+   //Constexpr
+    // constexpr std::vector<int> vec; Not allowed in Cpp17 
+
+   //ConstEval = only runs at compile time 
+    // consteval int x = 100; Cpp20only 
+}
+
+// class constLearning:
+// {
+//     public:
+
+//         bool setMVar() const
+//         {
+//             int var = mVar;
+//             mVar = 6;
+//             return true; 
+
+//         }
+
+// };
+
 bool chapter2()
 {
-    std::cout << "User Defined Types\n";
+    std::cout << "Ch2: User Defined Types\n";
 
     return false; 
 }
