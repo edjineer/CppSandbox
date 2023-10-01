@@ -145,6 +145,15 @@ bool chapter2()
     std::cout << "Unions\n";
     std::variant<int, std::string> var;
     var = "q";
+    // std::cout << "Var " << var << "\n";
+
+
+    //Enums 
+    // enum class Colors = {red, green, yellow};
+    // enum class Color {1, 2, 3};
+
+
+
 
     return false; 
 }
