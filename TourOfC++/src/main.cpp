@@ -10,6 +10,7 @@ bool test1b (const int &b);
 void constCastEx();
 
 bool chapter2();
+void chapter3();
 
 
 int main() 
@@ -19,6 +20,7 @@ int main()
     //chapter1();
     // constCastEx();
     chapter2();
+    chapter3();
 
     return 0;  
 
@@ -151,9 +153,28 @@ bool chapter2()
     //Enums 
     // enum class Colors = {red, green, yellow};
     // enum class Color {1, 2, 3};
-
-
-
-
+    //TODO: Revisit ENums 
     return false; 
+}
+
+namespace myNames
+{
+    class myClass
+    {
+        public: 
+            int myInt;
+    };
+
+}
+void chapter3()
+{
+    std::cout <<"Chapter 3: Modularity\n";
+    
+    myNames::myClass a;
+    a.myInt = 4; 
+    
+
+    
+
+    return;
 }
