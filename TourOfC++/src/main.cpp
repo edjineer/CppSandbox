@@ -2,6 +2,7 @@
 #include <string>
 #include <cassert>
 #include <vector>
+#include <variant>
 
 bool chapter1();
 bool test1a (int a, int &b);
@@ -113,6 +114,37 @@ void constCastEx()
 bool chapter2()
 {
     std::cout << "Ch2: User Defined Types\n";
+
+    //Structs 
+    struct Vector
+    {
+        int x;
+    };
+    Vector foo; 
+    foo.x = 6;
+    assert(foo.x == 6);
+
+
+    //Unions 
+    union uni 
+    {
+        int x; 
+        int *ptr; 
+    };
+
+    class Ex
+    {
+        public: 
+            int * t;
+            uni u; 
+    };
+
+    Ex ex1;
+    int val = 80;
+    ex1.t = &val;
+    std::cout << "Unions\n";
+    std::variant<int, std::string> var;
+    var = "q";
 
     return false; 
 }
