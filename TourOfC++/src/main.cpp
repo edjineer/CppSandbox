@@ -10,7 +10,9 @@ bool test1b (const int &b);
 void constCastEx();
 
 bool chapter2();
-void chapter3();
+void chapter3(int in=6);
+void chapter4();
+// int* afunc();
 
 
 int main() 
@@ -19,8 +21,9 @@ int main()
     
     //chapter1();
     // constCastEx();
-    chapter2();
-    chapter3();
+    // chapter2();
+    //chapter3(7);
+    chapter4();
 
     return 0;  
 
@@ -102,15 +105,12 @@ void constCastEx()
 // class constLearning:
 // {
 //     public:
-
 //         bool setMVar() const
 //         {
 //             int var = mVar;
 //             mVar = 6;
 //             return true; 
-
 //         }
-
 // };
 
 bool chapter2()
@@ -166,15 +166,52 @@ namespace myNames
     };
 
 }
-void chapter3()
+// int * afunc()
+// {
+//     int yval = 60;
+//     std::cout << "address: " << &yval << "\n";
+//     return &yval;
+// }
+void chapter3(int  in )
+
 {
     std::cout <<"Chapter 3: Modularity\n";
-    
+    std::cout <<"In=" << in << "\n";
     myNames::myClass a;
     a.myInt = 4; 
     
+    //Static Asserts 
+    const int i= 5;
+    const int j = 4;    
+    static_assert(j < i, "oo a custom error msg");
 
+    //Function Returns 
+    // int * retVal = afunc(); //Compile error, sad
+    // std::cout << retVal;
+
+    //Excpetion Handling 
+    try 
+    {
+        //throw 'a'; 
+        std::vector<bool> v;
+        v[-1];
+    }
+    catch(std::out_of_range & err )
+    {
+        std::cout << err.what();
+    }
+    catch(...)
+    {
+        std::cout << "nope\n";
+    }
     
-
+    throw 'b';
     return;
+}
+
+
+void chapter4()
+{
+    std::cout << "Chapter 4: Modularity\n";
+
 }
