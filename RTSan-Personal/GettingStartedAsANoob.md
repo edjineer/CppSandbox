@@ -1,7 +1,14 @@
-# Getting Started as a N00b on RTSan
+# Getting Started with RTSan Development
 
-Notes for Set-Up geared towards developers newer to the LLVM space. 
+Set-up instructions and resources geared towards developers who are new to the LLVM space.
 
-Note: Setup Instructions are currently set up specifically for WSL
+Note: Setup Instructions have only been tested on WSL
 
-## CMake Set-Up
+## Set-Up Guides
+
+### Step 1: Clone Relevant Repos
+
+LLVM In General: https://llvm.org/docs/GettingStarted.html
+LLVM Test Suite: https://llvm.org/docs/TestingGuide.html 
+
+

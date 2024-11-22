@@ -1,3 +1,6 @@
 [submodule "RTSan-Personal/llvm-test-suite"]
 	path = RTSan-Personal/llvm-test-suite
 	url = https://github.com/llvm/llvm-test-suite.git
+[submodule "RTSan-Personal/llvm-project"]
+	path = RTSan-Personal/llvm-project
+	url = https://github.com/llvm/llvm-project.git
